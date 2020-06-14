@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MyTestProject</string>
+
+    <!--login-->
+    <string name="login_btn_login">LOGIN</string>
+    <string name="logo">Logo</string>
+</resources>
