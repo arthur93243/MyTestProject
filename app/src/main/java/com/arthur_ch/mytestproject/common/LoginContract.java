@@ -13,7 +13,6 @@ public class LoginContract {
         void onLoginResult(boolean _result);
     }
 
-
     /*** Presenter <==> Model ****/
     // Presenter -> Model
     public interface ILoginModel {

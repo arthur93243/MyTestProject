@@ -4,28 +4,20 @@ import com.arthur_ch.mytestproject.common.LoginContract;
 
 public class LoginPresenter implements LoginContract.ILoginPresenter {
 
-    LoginContract.ILoginView Contract;
+    LoginContract.ILoginView View;
     LoginContract.ILoginModel Repository;
 
     public LoginPresenter(LoginContract.ILoginView _contract, LoginContract.ILoginModel _repository)
     {
-        this.Contract = _contract;
+        this.View = _contract;
         this.Repository = _repository;
     }
 
     @Override
     public void Login(String _account, String _password)
     {
-        if (!_account.isEmpty() && !_password.isEmpty())
-        {
-            //API
-            if (Repository.GetLoginResult(_account, _password))
-            {
-                this.Contract.onLoginResult(true);
-                return;
-            }
-        }
+        boolean res = Repository.GetLoginResult(_account, _password);
 
-        this.Contract.onLoginResult(false);
+        this.View.onLoginResult(res);
     }
 }
