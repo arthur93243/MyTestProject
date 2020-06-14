@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,8 +18,8 @@ import com.arthur_ch.mytestproject.presenter.LoginPresenter;
 public class LoginActivity extends AppCompatActivity implements LoginContract.ILoginView {
 
     Button btn_login;
-    TextView tv_account;
-    TextView tv_password;
+    EditText edt_account;
+    EditText edt_password;
 
     LoginPresenter loginPresenter;
 
@@ -34,8 +35,8 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.IL
     public void init()
     {
         this.btn_login = (Button) findViewById(R.id.btn_Login);
-        this.tv_account = (TextView) findViewById(R.id.tv_account);
-        this.tv_password = (TextView) findViewById(R.id.tv_password);
+        this.edt_account = (EditText) findViewById(R.id.edt_account);
+        this.edt_password = (EditText) findViewById(R.id.edt_account);
 
         this.loginPresenter = new LoginPresenter(this, new LoginRepository());
 
@@ -43,7 +44,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.IL
             @Override
             public void onClick(View view)
             {
-                loginPresenter.Login(tv_account.getText().toString(), tv_password.getText().toString());
+                loginPresenter.Login(edt_account.getText().toString(), edt_password.getText().toString());
             }
         });
     }

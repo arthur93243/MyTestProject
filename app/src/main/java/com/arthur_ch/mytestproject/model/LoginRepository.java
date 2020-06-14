@@ -6,7 +6,7 @@ public class LoginRepository implements LoginContract.ILoginModel {
     @Override
     public boolean GetLoginResult(String _account, String _password)
     {
-        if (_account == "1111" && _password == "1111") return true;
+        if (_account.equals("1111") && _password.equals("1111")) return true;
 
         return false;
     }

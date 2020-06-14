@@ -16,7 +16,7 @@ public class LoginPresenter implements LoginContract.ILoginPresenter {
     @Override
     public void Login(String _account, String _password)
     {
-        if (!_account.isEmpty() && !_account.isEmpty())
+        if (!_account.isEmpty() && !_password.isEmpty())
         {
             //API
             if (Repository.GetLoginResult(_account, _password))
