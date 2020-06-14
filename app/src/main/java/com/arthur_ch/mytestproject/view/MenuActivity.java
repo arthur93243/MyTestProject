@@ -1,8 +1,10 @@
-package com.arthur_ch.mytestproject;
+package com.arthur_ch.mytestproject.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.arthur_ch.mytestproject.R;
 
 public class MenuActivity extends AppCompatActivity {
 
