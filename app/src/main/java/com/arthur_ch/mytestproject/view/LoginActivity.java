@@ -1,19 +1,16 @@
 package com.arthur_ch.mytestproject.view;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.arthur_ch.mytestproject.R;
+import com.arthur_ch.mytestproject.common.ContractBuilder;
 import com.arthur_ch.mytestproject.common.LoginContract;
-import com.arthur_ch.mytestproject.model.LoginRepository;
-import com.arthur_ch.mytestproject.presenter.LoginPresenter;
 
 public class LoginActivity extends AppCompatActivity implements LoginContract.ILoginView {
 
@@ -21,7 +18,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.IL
     EditText edt_account;
     EditText edt_password;
 
-    LoginPresenter loginPresenter;
+    LoginContract.ILoginPresenter loginPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -38,7 +35,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.IL
         this.edt_account = (EditText) findViewById(R.id.edt_account);
         this.edt_password = (EditText) findViewById(R.id.edt_account);
 
-        this.loginPresenter = new LoginPresenter(this, new LoginRepository());
+        this.loginPresenter = ContractBuilder.GetLoginPresenter(this);
 
         this.btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
