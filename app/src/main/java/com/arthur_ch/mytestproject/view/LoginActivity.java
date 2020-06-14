@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.IL
     {
         this.btn_login = (Button) findViewById(R.id.btn_Login);
         this.edt_account = (EditText) findViewById(R.id.edt_account);
-        this.edt_password = (EditText) findViewById(R.id.edt_account);
+        this.edt_password = (EditText) findViewById(R.id.edt_password);
 
         this.loginPresenter = ContractBuilder.GetLoginPresenter(this);
 
